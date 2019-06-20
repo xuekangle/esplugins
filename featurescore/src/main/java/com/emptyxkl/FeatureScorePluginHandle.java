@@ -2,8 +2,6 @@ package com.emptyxkl;
 
 import com.emptyxkl.featurescoretype.FeatureScoreAbstractScript;
 import com.emptyxkl.utils.TypeChangeUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.elasticsearch.common.Nullable;
 import org.elasticsearch.common.xcontent.support.XContentMapValues;
 import org.elasticsearch.script.ExecutableScript;
@@ -17,7 +15,7 @@ public class FeatureScorePluginHandle implements NativeScriptFactory {
 
     @Override
     public ExecutableScript newScript(@Nullable Map<String, Object> map) {
-        String featureStr = map == null?null: XContentMapValues.nodeStringValue(map.get("feature"),null);
+        String featureStr = (map == null?null: XContentMapValues.nodeStringValue(map.get("feature"),null));
 
         String[] features = featureStr.split(",");
 
@@ -27,6 +25,7 @@ public class FeatureScorePluginHandle implements NativeScriptFactory {
         List<float[]> feascoreList = new ArrayList<>();
         for(String str:features){
             if(str == null || "".equals(str)){
+
                 continue;
             }
             float[] feascore = TypeChangeUtils.Bs64String2float(str);

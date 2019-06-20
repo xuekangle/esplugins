@@ -14,7 +14,7 @@ public class FeatureScoreByCosUtils {
         int[] itemCountArray = null;//为了避免频繁产生局部变量，所以将itemCountArray声明在此
         //以空格为分隔符，分解字符串
         String strArray[] = str1.split(" ");
-        for (int i = 0; i < strArray.length; i++) {
+        for (int i = 0; i < strArray.length; ++i) {
             if (vectorSpace.containsKey(strArray[i])){
                 ++(vectorSpace.get(strArray[i])[0]);
             }else{
@@ -25,7 +25,7 @@ public class FeatureScoreByCosUtils {
             }
         }
         strArray = str2.split(" ");
-        for (int i = 0; i < strArray.length; i++) {
+        for (int i = 0; i < strArray.length; ++i) {
             if (vectorSpace.containsKey(strArray[i])){
                 ++(vectorSpace.get(strArray[i])[1]);
             }else{

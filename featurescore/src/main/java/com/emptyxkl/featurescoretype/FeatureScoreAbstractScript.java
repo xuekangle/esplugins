@@ -1,8 +1,6 @@
 package com.emptyxkl.featurescoretype;
 
-import com.emptyxkl.utils.CheckUtils;
 import com.emptyxkl.utils.FeatureScoreUtils;
-import com.emptyxkl.utils.TypeChangeUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.elasticsearch.index.fielddata.ScriptDocValues;
