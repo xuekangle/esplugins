@@ -43,7 +43,7 @@ public class FaceTest {
     @Test
     public void test2(){
         String base641 = "CVjjQqsCC0IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-        String featurePic = "CVjjQq4CC0IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+        String featurePic = "CVjjQqsCC0IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
         byte[] bytes1 = Base64.getDecoder().decode(base641);
         byte[] bytes2 = Base64.getDecoder().decode(featurePic);
         System.out.println(Arrays.toString(bytes1));

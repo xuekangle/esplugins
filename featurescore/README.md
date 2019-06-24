@@ -4,9 +4,8 @@
 
 * 编译安装：
     * 编译：mvn clean package -DskipTests
-    * 安装方式(两种)：
-        * 1. 直接将target/release/es-plugins-featurescore-${version}.zip文件解压到${elasticsearch-home}/plugins/featurescore下面
-        * 2. ${elasticsearch-home}/bin/elasticsearch-plugin install file:///path/to plugin.zip(官方不再支持)
+    * 安装方式：
+        直接将target/release/es-plugins-featurescore-${version}.zip文件解压到${elasticsearch-home}/plugins/featurescore下面
 
 * 插件测试：
     * 首先测试插件是否安装成功 'bin/elasticsearch-plugin list'
@@ -39,4 +38,4 @@
 ```
 
 * 注意：
-    * 本例子有两种计算方式，计算欧式距离或余弦距离。根据计算方式的不通，查询语句应做生序或降序排序。
+    * 本例子有两种计算方式，计算欧式距离或余弦距离。根据计算方式的不同，查询语句应做生序或降序排序。
