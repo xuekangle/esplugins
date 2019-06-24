@@ -7,13 +7,13 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Base64;
 
-public class FaceTest {
+public class ScoreTest {
 
 
     /**
      * 计算两位的欧式距离，（后边补零，为了补齐长度）
      */
-    @Test
+    @org.junit.Test
     public void test1(){
         float[] test1 = new float[]{113.67194f,34.752607f,0,0,0,0,0,0};
         float[] test2 = new float[]{113.67194f,34.752616f,0,0,0,0,0,0};
@@ -40,7 +40,7 @@ public class FaceTest {
 
     }
 
-    @Test
+    @org.junit.Test
     public void test2(){
         String base641 = "CVjjQqsCC0IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
         String featurePic = "CVjjQqsCC0IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
