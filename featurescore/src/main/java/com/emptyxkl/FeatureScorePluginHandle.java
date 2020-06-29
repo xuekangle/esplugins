@@ -4,13 +4,13 @@ import com.emptyxkl.featurescoretype.FeatureScoreAbstractScript;
 import com.emptyxkl.utils.TypeChangeUtils;
 import org.elasticsearch.common.Nullable;
 import org.elasticsearch.common.xcontent.support.XContentMapValues;
-import org.elasticsearch.plugins.ScriptPlugin;
+import org.elasticsearch.script.ScriptContext;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class FeatureScorePluginHandle implements ScriptPlugin {
+public class FeatureScorePluginHandle {
 
     @Override
     public ExecutableScript newScript(@Nullable Map<String, Object> map) {

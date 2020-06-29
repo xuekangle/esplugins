@@ -15,6 +15,6 @@ public class FeatureScorePlugin extends Plugin implements ActionPlugin, ScriptPl
 
     @Override()
     public List<ScriptContext<?>> getContexts(){
-        return Collections.<ScriptContext<?>>singletonList(new FeatureScorePluginHandle());
+        return Collections.singletonList(new FeatureScorePluginHandle());
     }
 }
