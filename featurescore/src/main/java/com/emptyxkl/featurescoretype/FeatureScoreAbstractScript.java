@@ -4,11 +4,11 @@ import com.emptyxkl.utils.FeatureScoreUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.elasticsearch.index.fielddata.ScriptDocValues;
-import org.elasticsearch.script.AbstractDoubleSearchScript;
+import org.elasticsearch.script.SearchScript;
 
 import java.util.List;
 
-public class FeatureScoreAbstractScript extends AbstractDoubleSearchScript {
+public class FeatureScoreAbstractScript extends SearchScript {
 
     private final static Logger LOGGER = LogManager.getLogger(FeatureScoreAbstractScript.class);
 
