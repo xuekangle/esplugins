@@ -1,20 +1,24 @@
 package com.emptyxkl;
 
-import org.elasticsearch.plugins.ActionPlugin;
+import com.emptyxkl.featurescoretype.MySciptEngine;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.plugins.Plugin;
 import org.elasticsearch.plugins.ScriptPlugin;
 import org.elasticsearch.script.ScriptContext;
+import org.elasticsearch.script.ScriptEngine;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Collection;
 
-public class FeatureScorePlugin extends Plugin implements ActionPlugin, ScriptPlugin {
+public class FeatureScorePlugin extends Plugin implements ScriptPlugin {
 
-    public FeatureScorePlugin(){
-    }
+    private final Logger logger = LogManager.getLogger(FeatureScorePlugin.class);
 
-    @Override()
-    public List<ScriptContext<?>> getContexts(){
-        return Collections.singletonList(new FeatureScorePluginHandle());
+    @Override
+    public ScriptEngine getScriptEngine(Settings settings, Collection<ScriptContext<?>> contexts) {
+        logger.info("contexts: {}", Arrays.toString(contexts.toArray()));
+        return new MySciptEngine();
     }
 }
