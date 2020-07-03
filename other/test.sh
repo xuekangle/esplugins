@@ -1,0 +1,25 @@
+#!/bin/bash
+curl -H "Content-Type:application/json" -XGET 127.0.0.1:9200/person/_search?pretty -d '
+{
+    "query":{
+        "function_score":{
+            "query":{
+                "match_all":{}
+            },
+            "script_score":{
+                "script":{
+                    "inline":"featurescore",
+                    "lang":"score_script",
+                    "params":{
+                        "feature":"+LCPuyV7vrtP4U67/gTiudOWhLvtrru6HEw7u/Pz0zs3ZbQ7L3DUPKfoK7vG2de60EjCu+zhJjwR4mu7ScOUPSDsc7vONWw+qJqPu+hrkrvxdQM9C8d7u2Ragz6GdaG7sfnZumGE17vJaRm7sA2Ju3Itf7u1ocW67u7hPbDkmj7FcHm7fZpuuyMWTrtZrtC7+bZDu/rzJ7tUVQm7X9h1u2fFQ7vBN7C7TjsNOShgOz7wLv670Fiku7TpkD6Uyb673NlnPrJivLt0E8m5FA1vu7haBz2M+Bo6yt+9u9cQwbv6t0s7NGiFu2GiRbvVL4W7f6eHu6L7pLtzzIG7lOkGu7SilzypZEa78WJEu+WsF7w+D+a7hesxPu06BrtHpb+7PQeeu5MOpLuOkyI+AmLUu0YqJbt62ie7AUoJvC5JULsmr0a733Y6uw2/frvycGm71pqcu/dVWrsmbSA6Fw7nu3u8kLsqNzS7cRw6u7U8qLsOhvo9oiqFu/Nu0bsPJoe7R3YlPpHU3zqM0Da7lkh9PQk0ebtT8do8ssawuxrJuTwM+IS70CKhuy68XDx6k3i7w6icuwstxrtLoFI79ONMuzKwDj2d51u7f/pPu6zv07u2iYs7m5JcPmm267kVuh67kWh6uxjFvLrMVKI9rF9hu4kOfbs7uKa7h1uyu6ehvDw6vLW7mOq0u8qFELu/3Yq7fpO/uu+EqDoPcPc8CIHLux4TTrtaeZO7AnZBu8cTQT6e63u7sYiCuxR6XLu5ctW72KOqu7hhzrso7bK7Yk2Gux4tMLqksMG7rFKaPXFDhLvKFs27aklsu9I6Cbui7WQ5YbIHPXdpv7ubPS+7cCTQPR8WA7vW/s67niytu1nysLmADkM+PY40uwr3aj73dCU+Ywxuu1Z7mrvrR1S7u7OXu7uhJD2EEqS7ygSyuymlsbtbMsI4jxAru7ggnbvNC4e7lrI8Pi0Tcrv5NGW7hWjCu7rTAj0JmqK7lKvQu0c+ijsg/q+7wSRwu81zabvUp8m72Mtfu+eShbta96y7Cg71upE/HLt4RAW78fW9Prqlk7sRa5a7mlWGu034pbvQaY67bjW2PZysrLvHEpS6VoCvPc/Wxj18Hoq7XYSMOoa6vjy9tze7q8VQu9ehCj4gAwG7IpZFuzdV87setCq7Nzl3PQ+XILsjCSk55Gk3u0evBj43gfG7g8K9u4d1mbu7BVi7BFqZuylOhD1kcqy7/wIDu9YUULtFV9i7hNUoPv8FxLvY5k671feOu7+MFLtXxDi7Sskbu0LCoLucm8A822Cwu9DDYLtOet+7UFaIulBCYbsvNcK7srWAuxsqxrvpjL27/wjku2Friz3tLgq7v7y+ug=="
+                    }
+                }
+            }
+        }
+    },
+    "sort":{
+        "_score":{
+            "order":"asc"
+        }
+    }
+}'

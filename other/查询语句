@@ -6,7 +6,7 @@
             "script_score":{
                 "script":{
                     "inline":"featurescore",
-                    "lang":"native",
+                    "lang":"score_script",
                     "params":{
                         "feature":"base64数据",
                     }
